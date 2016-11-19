@@ -1,0 +1,135 @@
+﻿<Window x:Class="LED.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LED"
+        mc:Ignorable="d"
+        Title="LED control panel " Height="463.333" Width="1131.59" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowDrop="False" WindowStyle="None" Background="{x:Null}"       >
+    <Window.Resources >
+        <ControlTemplate x:Key="WindowTemplateKey" TargetType="{x:Type Window}">
+            <Border BorderBrush="{TemplateBinding BorderBrush}"  BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                <Grid>
+                    <AdornerDecorator>
+                        <ContentPresenter/>
+                    </AdornerDecorator>
+                    <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" IsTabStop="false" Visibility="Collapsed" VerticalAlignment="Bottom"/>
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="ResizeMode" Value="CanResizeWithGrip"/>
+                        <Condition Property="WindowState" Value="Normal"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Visibility" TargetName="WindowResizeGrip" Value="Visible"/>
+                </MultiTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style x:Key="WindowStyle1" TargetType="{x:Type Window}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <AdornerDecorator>
+                                <ContentPresenter/>
+                            </AdornerDecorator>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="ResizeMode" Value="CanResizeWithGrip">
+                    <Setter Property="Template" Value="{StaticResource WindowTemplateKey}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="589.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="132*"/>
+            <ColumnDefinition Width="742*"/>
+            <ColumnDefinition Width="22*"/>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="126*"/>
+            <ColumnDefinition Width="96.59"/>
+        </Grid.ColumnDefinitions>
+        <Slider x:Name="slider_red" Margin="40,58,6,0" Style="{DynamicResource SimpleSlider}" Height="85" VerticalAlignment="Top" Grid.ColumnSpan="2" ValueChanged="slider_red_ValueChanged" Grid.Column="1" OpacityMask="{DynamicResource SolidBorderBrush}" Foreground="Black" BorderBrush="Black" Background="Red"/>
+        <Slider x:Name="slider_gre" Margin="40,91,6,177" Style="{DynamicResource SimpleSlider}" Grid.ColumnSpan="2" ValueChanged="slider_gre_ValueChanged" Grid.Column="1" OpacityMask="{DynamicResource DisabledForegroundBrush}">
+            <Slider.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF02FB0D"/>
+                </LinearGradientBrush>
+            </Slider.Background>
+        </Slider>
+        <Slider x:Name="slider_blu" Margin="40,128,6,0" Style="{DynamicResource SimpleSlider}" Height="86" VerticalAlignment="Top" Grid.ColumnSpan="2" ValueChanged="slider_blu_ValueChanged" Grid.Column="1">
+            <Slider.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF020DFB"/>
+                </LinearGradientBrush>
+            </Slider.Background>
+        </Slider>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="61" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="300" Grid.Column="1" Margin="136,0,0,119"/>
+        <Button x:Name="button"  Content="Connect" ClickMode="Release" Click="button_Click" BorderThickness="0" Style="{DynamicResource SimpleButton}" Padding="0"   Foreground="Black" Margin="11,189,660,0" Background="#FF2E50F9" BorderBrush="#FF0029F5" Height="41" VerticalAlignment="Top" Grid.ColumnSpan="2"     />
+        <Button x:Name="exit"  Content="" ClickMode="Release" Click="button_Click_EXIT" BorderThickness="0"  Style="{DynamicResource ButtonStyle3}" Padding="0"   Foreground="Black" Background="Red" BorderBrush="Red" Height="18" VerticalAlignment="Top" Grid.Column="5" HorizontalAlignment="Right" Width="30" Margin="0,-5,0,0"     >
+            <Button.Resources>
+                <!-- Simple Button - This control sets brushes on each state. Note that these brushes must be listed above since they are static resources -->
+                <Style x:Key="ButtonStyl" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+                    <Setter Property="FocusVisualStyle" Value="{DynamicResource SimpleButtonFocusVisual}"/>
+                    <Setter Property="Background" Value="{DynamicResource NormalBrush}"/>
+                    <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+
+                                <!-- We use Grid as a root because it is easy to add more elements to customize the button -->
+                                <Grid x:Name="Grid">
+                                    <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}"/>
+
+                                    <!-- Content Presenter is where the text content etc is placed by the control -->
+                                    <!-- The bindings are useful so that the control can be parameterized without editing the template -->
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+                                </Grid>
+
+                                <!--Each state sets a brush on the Border in the template -->
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="true">
+                                        <Setter Property="BorderBrush" Value="{DynamicResource DefaultedBorderBrush}" TargetName="Border"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Background" Value="{DynamicResource MouseOverBrush}" TargetName="Border"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="true">
+                                        <Setter Property="Background" Value="{DynamicResource PressedBrush}" TargetName="Border"/>
+                                        <Setter Property="BorderBrush" Value="{DynamicResource PressedBorderBrush}" TargetName="Border"/>
+                                    </Trigger>
+                                    <Trigger Property="IsEnabled" Value="true"/>
+                                    <Trigger Property="IsEnabled" Value="false">
+                                        <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+                                        <Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
+                                        <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+        </Button>
+        <Button x:Name="maximized" Click="maxi" Content="" Grid.Column="4" Margin="111,-5,44,0" VerticalAlignment="Top" Style="{DynamicResource SimpleButton}" FontSize="32" Height="18" Grid.ColumnSpan="2"/>
+        <Button x:Name="minimized" Click="mini" Content="_" Grid.Column="4" Margin="0,-32,0,0" VerticalAlignment="Top" Style="{DynamicResource SimpleButton}" HorizontalAlignment="Left" Width="30" FontSize="32"/>
+        <Button x:Name="restore" Click="res" Content="" Grid.Column="4" Margin="44,-5,27,0" VerticalAlignment="Top" Style="{DynamicResource SimpleButton}"/>
+        <Button x:Name="button_test"  Content="Attenuation" ClickMode="Release" Click="button_test_Click" BorderThickness="0" Style="{DynamicResource SimpleButton}" Padding="0"   Foreground="Black" Margin="10,250,660,0" Background="#FF2E50F9" BorderBrush="#FF0029F5" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="2"     />
+        <Button x:Name="button_test_Copy"  Content="Stop Attenuation" ClickMode="Release" Click="button_test_Copy_Click" BorderThickness="0" Style="{DynamicResource SimpleButton}" Padding="0"   Foreground="Black" Margin="10,304,660,0" Background="#FF2E50F9" BorderBrush="#FF0029F5" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="2"     />
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,23 @@
+C:\Users\1\Desktop\led_client\led_control\LED\bin\x64\Debug\LED_CONTROL_UI.exe.config
+C:\Users\1\Desktop\led_client\led_control\LED\bin\x64\Debug\LED_CONTROL_UI.exe.manifest
+C:\Users\1\Desktop\led_client\led_control\LED\bin\x64\Debug\LED_CONTROL_UI.application
+C:\Users\1\Desktop\led_client\led_control\LED\bin\x64\Debug\LED_CONTROL_UI.exe
+C:\Users\1\Desktop\led_client\led_control\LED\bin\x64\Debug\LED_CONTROL_UI.pdb
+C:\Users\1\Desktop\led_client\led_control\LED\bin\x64\Debug\led_control.dll
+C:\Users\1\Desktop\led_client\led_control\LED\bin\x64\Debug\led_control.pdb
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\LED.csprojResolveAssemblyReference.cache
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\Simple Styles.baml
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\MainWindow.g.cs
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\App.g.cs
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\LED_CONTROL_UI_MarkupCompile.cache
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\LED_CONTROL_UI_MarkupCompile.lref
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\App.baml
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\MainWindow.baml
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\LED_CONTROL_UI.g.resources
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\LED.Properties.Resources.resources
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\LED.csproj.GenerateResource.Cache
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\LED_CONTROL_UI.TrustInfo.xml
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\LED_CONTROL_UI.exe.manifest
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\LED_CONTROL_UI.application
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\LED_CONTROL_UI.exe
+C:\Users\1\Desktop\led_client\led_control\LED\obj\x64\Debug\LED_CONTROL_UI.pdb
