@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Runtime.InteropServices;
+
 namespace LED
 {
     /// <summary>
@@ -27,12 +28,10 @@ namespace LED
     }
     public partial class MainWindow : Window
     {
-       
-
         public MainWindow()
         {
           
-            AsynchronousClient.ip = File.ReadAllText(@"C:\Users\1\Desktop\led_client\led_control\LED\bin\x64\Debug\ip.t");
+            AsynchronousClient.ip = File.ReadAllText(Environment.CurrentDirectory+@"\ip.t");
             InitializeComponent();
             th = 0;
             auto_connect();
@@ -43,10 +42,8 @@ namespace LED
         //{
         //    var dd = new MainWindow();
         //    var rgb_ = "RED - " + data.red + " | " + "GREEN - " + data.gre + " | " + "BLU - " + data.blu;
-        //textBox.Text = rgb_;
-     
+        //textBox.Text = rgb_;     
         //}
-
         private void slider_red_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             slider_red.Minimum = Convert.ToDouble(1);
@@ -93,17 +90,13 @@ namespace LED
             if (th == 1)
             {
                 s.Abort();
-                th = 0;
-          
+                th = 0;          
             }
             else
             {
                 s.Start();
-                th = 1;
-            
+                th = 1;           
             }
-
-
         }
         private void button_Click_EXIT(object sender, RoutedEventArgs e)
         {
@@ -190,15 +183,12 @@ namespace LED
         }
         private void button_test_Click(object sender, RoutedEventArgs e)
         {
-          //  var t =
                 new System.Threading.Thread(r_).Start();
-            //textBox.Text = data.red.ToString();
         }
 
         private void button_test_Copy_Click(object sender, RoutedEventArgs e)
         {
-  
-            stop = true;
+              stop = true;
             msg("true on ");
         }
     }

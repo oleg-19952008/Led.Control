@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="led_control.dll" size="6144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="led_control.dll" size="6656">
       <assemblyIdentity name="led_control" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1Z0a0CEXsRYHZ2t6i58KnvtIj/14BDQCmd6fz/nw3MY=</dsig:DigestValue>
+        <dsig:DigestValue>YJg0ZDrPAexa4v7YXgeH07KJQnlRP2nFzRTf/jW0b3o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tGH4fdTapGrdZS841DXwGtou1Y63Bh40t2FmQYfwYPs=</dsig:DigestValue>
+        <dsig:DigestValue>7nx9LDKuo5H27jg+IANvx/h7dO2/A1GnG8yJUnuEgH8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

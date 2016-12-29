@@ -102,7 +102,7 @@ public class AsynchronousClient
         new ManualResetEvent(false);
     private static ManualResetEvent receiveDone =
         new ManualResetEvent(false);
-    public static  Socket sck;
+    public static Socket sck;
 
     // The response from the remote device.
     private static String response = String.Empty;
@@ -127,14 +127,14 @@ public class AsynchronousClient
             // Connect to the remote endpoint.
             //while (true)
             //{
-                client.BeginConnect(LEP,
-                  new AsyncCallback(ConnectCallback), client);
-                connectDone.WaitOne();
+            client.BeginConnect(LEP,
+              new AsyncCallback(ConnectCallback), client);
+            connectDone.WaitOne();
             //}
             // Send test data to the remote device.
             //Send("This is a test<EOF>");
-  
-      
+
+
             sendDone.WaitOne();
             // Receive the response from the remote device.
             Receive();
@@ -155,12 +155,12 @@ public class AsynchronousClient
     }
     public static string packet(int pin, int int1, int pin2, int int2, int pin3, int int3)
     {
-        var pck = pin + "|" + int1 + "|" + pin2 + "|" + int2 + "|" + pin3 + "|" + int3+"|\n";
-        if(pin==pin2 || pin2 == pin3 || pin == pin3  )
+        var pck = pin + "|" + int1 + "|" + pin2 + "|" + int2 + "|" + pin3 + "|" + int3 + "|\n";
+        if (pin == pin2 || pin2 == pin3 || pin == pin3)
         {
             //Console.WriteLine("error - pinN = pinN");
         }
-        if (int1 == 0 || int2 == 0 || int3 == 0   )
+        if (int1 == 0 || int2 == 0 || int3 == 0)
         {
             int1 = 1;
             int2 = 1;
@@ -178,11 +178,11 @@ public class AsynchronousClient
         //   while (true)
         //for (int asd = 0; asd < 100; asd++)
         //{
-         //   Send(packet(7, 244, 5, 12, 7, 44));
-      //  } //Send("test_logic");
+        //   Send(packet(7, 244, 5, 12, 7, 44));
+        //  } //Send("test_logic");
         //while (true) { var s = Console.ReadLine();
         //Send(s);
-  //  }
+        //  }
     }
     private static void ConnectCallback(IAsyncResult ar)
     {
@@ -239,10 +239,10 @@ public class AsynchronousClient
             if (bytesRead > 0)
             {
                 // There might be more data, so store the data received so far.
-            
-       
+
+
                 // Get the rest of the data.
-                client.BeginReceive(buffer, 0,buffer.Length, 0,
+                client.BeginReceive(buffer, 0, buffer.Length, 0,
                     new AsyncCallback(ReceiveCallback), sck);
             }
             else
@@ -261,8 +261,8 @@ public class AsynchronousClient
             Console.WriteLine(e.ToString());
         }
     }
- 
-    private static void Send( String data)
+
+    private static void Send(String data)
     {
         System.Threading.Thread.Sleep(20);
         Console.WriteLine("DATA SENT - " + data + "\n");
@@ -294,11 +294,4 @@ public class AsynchronousClient
             Console.WriteLine(e.ToString());
         }
     }
-
-    //public static void Main()
-    //{
-    //    StartClient();
-       
-    //}
 }
-//
