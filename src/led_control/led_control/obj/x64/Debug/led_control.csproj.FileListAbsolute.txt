@@ -3,3 +3,8 @@ C:\Users\1\Desktop\led_client\led_control\led_control\bin\x64\Debug\led_control.
 C:\Users\1\Desktop\led_client\led_control\led_control\bin\x64\Debug\led_control.pdb
 C:\Users\1\Desktop\led_client\led_control\led_control\obj\x64\Debug\led_control.dll
 C:\Users\1\Desktop\led_client\led_control\led_control\obj\x64\Debug\led_control.pdb
+C:\Users\0\Documents\GitHub\Led.Control\src\led_control\led_control\bin\x64\Debug\led_control.dll.config
+C:\Users\0\Documents\GitHub\Led.Control\src\led_control\led_control\bin\x64\Debug\led_control.dll
+C:\Users\0\Documents\GitHub\Led.Control\src\led_control\led_control\bin\x64\Debug\led_control.pdb
+C:\Users\0\Documents\GitHub\Led.Control\src\led_control\led_control\obj\x64\Debug\led_control.dll
+C:\Users\0\Documents\GitHub\Led.Control\src\led_control\led_control\obj\x64\Debug\led_control.pdb

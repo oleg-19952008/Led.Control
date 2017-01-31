@@ -25,6 +25,10 @@ namespace LED
         public static int red = 1;
         public static int blu = 1;
         public static int gre = 1;
+        public static int PIN_red = 4; //7 нога сгорела
+        public static int PIN_blu = 3;
+        public static int PIN_green = 2;
+
     }
     public partial class MainWindow : Window
     {
@@ -52,7 +56,7 @@ namespace LED
             var rgb_ = "RED - " + data.red + " | " + "GREEN - " + data.gre + " | " + "BLU - " + data.blu;
             textBox.Text = rgb_;
             data.red = (int)t;
-            AsynchronousClient.packet(7, data.red, 6, data.blu, 5, data.gre);
+            AsynchronousClient.packet(data.PIN_red, data.red, data.PIN_blu, data.blu, data.PIN_green, data.gre);
         }
 
         private void slider_blu_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -63,7 +67,7 @@ namespace LED
             var rgb_ = "RED - " + data.red + " | " + "GREEN - " + data.gre + " | " + "BLU - " + data.blu;
             textBox.Text = rgb_;
             data.blu = (int)t;
-            AsynchronousClient.packet(7, data.red, 6, data.blu, 5, data.gre);
+            AsynchronousClient.packet(data.PIN_red, data.red, data.PIN_blu, data.blu, data.PIN_green, data.gre);
         }
 
         private void slider_gre_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -75,7 +79,7 @@ namespace LED
             data.gre = (int)t;
             var rgb_ = "RED - " + data.red + " | " + "GREEN - " + data.gre + " | " + "BLUE - " + data.blu;
             textBox.Text = rgb_;
-            AsynchronousClient.packet(7, data.red, 6, data.blu, 5, data.gre);
+            AsynchronousClient.packet(data.PIN_red, data.red, data.PIN_blu, data.blu, data.PIN_green, data.gre);
         }
         public static void msg(string s)
         {
@@ -138,7 +142,7 @@ namespace LED
                     data.gre = 1;
                     data.blu = 1;
          
-                    while (r < 1000 && g < 1000 && b < 1000)
+                    while (r < 1023 && g < 1023 && b < 1023)
                     {
                         r++;
                         g++;
@@ -149,7 +153,8 @@ namespace LED
                                 data.red = r;
                         data.gre = g;
                         data.blu = b;
-                        AsynchronousClient.packet(7, r, 6, b, 5, g);
+                        AsynchronousClient.packet(data.PIN_red, r, data.PIN_blu, b, data.PIN_green, g);
+                        //AsynchronousClient.packet(7, r, 6, b, 5, g);
                         if (stop == true)
                         {
                             System.Threading.Thread.CurrentThread.Interrupt();
@@ -169,7 +174,8 @@ namespace LED
                         data.blu = b;
                         data.red = r;
                         data.gre = g;
-                        AsynchronousClient.packet(7, r, 6, b, 5, g);
+                        AsynchronousClient.packet(data.PIN_red, r, data.PIN_blu, b, data.PIN_green, g);
+                   //     AsynchronousClient.packet(7, r, 6, b, 5, g);
                         if (stop == true)
                         {
                             System.Threading.Thread.CurrentThread.Interrupt();

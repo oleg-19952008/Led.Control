@@ -264,7 +264,7 @@ public class AsynchronousClient
 
     private static void Send(String data)
     {
-        System.Threading.Thread.Sleep(20);
+    System.Threading.Thread.Sleep(20);
         Console.WriteLine("DATA SENT - " + data + "\n");
 
         // Convert the string data to byte data using ASCII encoding.
